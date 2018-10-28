@@ -13,6 +13,8 @@ Playoff Y/N
 First Round Bye 
 Home Field
 
+For Reference: https://www.si.com/nfl/standings/playoff 
+
 ## Installation
 
 Add this line to your application's Gemfile:
