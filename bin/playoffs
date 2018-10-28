@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/nfl_playoffs'
+
+Playoffs::CLI.new.call
