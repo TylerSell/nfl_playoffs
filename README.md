@@ -1,8 +1,17 @@
 # NflPlayoffs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nfl_playoffs`. To experiment with that code, run `bin/console` for an interactive prompt.
+Hello.  This gem is a program that will scrape data from SI.com page and return values for the NFL Playoffs if the season were to end today.
 
-TODO: Delete this and the text above, and describe your gem
+This program has a CLI in the bin directory named 'playoffs' that allows all the functionality of this gem.
+
+In addition to each conference total playoff standings it will also display/return the following information:
+
+Total Wins
+Total Losses
+Total Ties
+Playoff Y/N 
+First Round Bye 
+Home Field
 
 ## Installation
 
