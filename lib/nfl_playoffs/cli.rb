@@ -8,10 +8,13 @@ class CLI
   
   def welcome
     puts "If the season ended today..."
+    puts ""
   end
   
   def menu 
+    Scrape.today
     puts "Choose one of the following numbers:"
+    puts ""
     puts <<~HEREDOC
       1. AFC Playoff Teams 
       2. NFC Playoff Teams 
@@ -40,6 +43,7 @@ class CLI
         exit 
       else 
         puts "I don't understand please choose again."
+        puts ""
         menu
     end
   end
