@@ -1,7 +1,16 @@
 class CLI 
   
   def call 
+    welcome
+    menu
+    goodbye
+  end
+  
+  def welcome
     puts "If the season ended today..."
+  end
+  
+  def menu 
     puts "Choose one of the following numbers:"
     puts <<~HEREDOC
       1. AFC Playoff Teams 
@@ -14,8 +23,7 @@ class CLI
     HEREDOC
     
     input = gets.strip
-    while input != "7"
-      case input 
+    case input 
       when "1"
         afc_playoff_teams
       when "2"
@@ -28,11 +36,15 @@ class CLI
         nfc_bye
       when "6"
         nfc_home_field
+      when "7"
+        exit 
       else 
         puts "I don't understand please choose again."
-      end
+        menu
     end
-    
   end
   
+  def goodbye
+    puts "Goodbye. Check back next week for an update."
+  end
 end
