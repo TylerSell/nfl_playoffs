@@ -4,12 +4,9 @@ Hello.  This gem is a program that will scrape data from SI.com page and return 
 
 This program has a CLI in the bin directory named 'playoffs' that allows all the functionality of this gem.
 
-In addition to each conference total playoff standings it will also display/return the following information:
+In addition to each conference playoff teams it will also display/return the following information:
 
-Total Wins
-Total Losses
-Total Ties
-Playoff Y/N 
+Record
 First Round Bye 
 Home Field
 
