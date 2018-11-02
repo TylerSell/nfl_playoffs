@@ -10,6 +10,7 @@ class Scrape
     afc << self.blank4
     afc << self.blank5
     afc << self.blank6
+    afc << self.blank7
   end
   
   def self.blank
@@ -72,19 +73,33 @@ class Scrape
     team  
   end
   
+   def self.blank7
+    team = self.new
+    team.name = "Ravens"
+    team.wins = "4"
+    team.losses = "4"
+    team.ties = "0"
+
+    team  
+  end
+  
   def self.scrape_nfc
     nfc = []
   end
   
   def self.afc_playoff_teams
     self.scrape_afc.each_with_index do |team, index|
-      puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      if index >= 0 && index <= 5  
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
     end
   end
   
   def self.nfc_playoff_teams
     self.scrape_nfc.each_with_index do |team, index|
-      puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      if index >= 0 && index <= 5  
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
     end
   end
   
@@ -115,6 +130,14 @@ class Scrape
   def self.nfc_home_field
     self.scrape_nfc.each_with_index do |team, index|
       if index == 0 
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
+    end
+  end
+  
+  def self.afc_wild_card
+    self.scrape_afc.each_with_index do |team, index|
+      if index >= 4 && index <= 5
         puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
       end
     end

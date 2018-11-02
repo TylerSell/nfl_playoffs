@@ -20,24 +20,38 @@ class CLI
       4. AFC Home Field Advantage
       5. NFC First Round Bye
       6. NFC Home Field Advantage
-      7. Exit 
+      7. AFC Wild Card 
+      8. NFC Wild Card 
+      9. Exit 
     HEREDOC
     
     input = gets.strip
     case input 
       when "1"
         Scrape.afc_playoff_teams
+        menu
       when "2"
         Scrape.nfc_playoff_teams
+        menu
       when "3"
         Scrape.afc_bye
+        menu
       when "4"
         Scrape.afc_home_field
+        menu
       when "5"
         Scrape.nfc_bye
+        menu
       when "6"
         Scrape.nfc_home_field
+        menu
       when "7"
+        Scrape.afc_wild_card
+        menu 
+      when "8"
+        Scrape.nfc_wild_card
+        menu 
+      when "9"
         goodbye
         exit 
       else 
