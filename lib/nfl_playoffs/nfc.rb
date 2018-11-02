@@ -1,4 +1,6 @@
-class NFC < Display
+class NFC
+  extend Display
+  
   attr_accessor :name, :wins, :losses, :ties 
   
   @@all = []

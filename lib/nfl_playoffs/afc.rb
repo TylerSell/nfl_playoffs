@@ -1,4 +1,6 @@
-class AFC < Display
+class AFC
+  extend Display
+  
   attr_accessor :name, :wins, :losses, :ties 
   
   @@all = []
