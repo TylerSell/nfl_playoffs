@@ -26,7 +26,7 @@ class CLI
     input = gets.strip
     case input 
       when "1"
-        afc_playoff_teams
+        Scrape.afc_playoff_teams
       when "2"
         nfc_playoff_teams
       when "3"
