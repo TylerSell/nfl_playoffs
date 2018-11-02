@@ -10,6 +10,13 @@ class AFC
   end
   
   def self.all 
+    self.blank 
+    self.blank2
+    self.blank3
+    self.blank4
+    self.blank5
+    self.blank6
+    self.blank7
     @@all 
   end
   
