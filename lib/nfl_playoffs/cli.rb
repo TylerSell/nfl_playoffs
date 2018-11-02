@@ -3,7 +3,6 @@ class CLI
   def call 
     welcome
     menu
-    goodbye
   end
   
   def welcome
@@ -12,7 +11,6 @@ class CLI
   end
   
   def menu 
-    Scrape.today
     puts "Choose one of the following numbers:"
     puts ""
     puts <<~HEREDOC
@@ -40,6 +38,7 @@ class CLI
       when "6"
         nfc_home_field
       when "7"
+        goodbye
         exit 
       else 
         puts "I don't understand please choose again."
