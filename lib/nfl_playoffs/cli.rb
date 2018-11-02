@@ -28,28 +28,28 @@ class CLI
     input = gets.strip
     case input 
       when "1"
-        Scrape.afc_playoff_teams
+        AFC.playoff_teams
         menu
       when "2"
-        Scrape.nfc_playoff_teams
+        NFC.playoff_teams
         menu
       when "3"
-        Scrape.afc_bye
+        AFC.bye_teams
         menu
       when "4"
-        Scrape.afc_home_field
+        AFC.home_field
         menu
       when "5"
-        Scrape.nfc_bye
+        NFC.bye_teams
         menu
       when "6"
-        Scrape.nfc_home_field
+        NFC.home_field
         menu
       when "7"
-        Scrape.afc_wild_card
+        AFC.wild_card
         menu 
       when "8"
-        Scrape.nfc_wild_card
+        NFC.wild_card
         menu 
       when "9"
         goodbye
