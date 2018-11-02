@@ -6,10 +6,10 @@ This program has a CLI in the bin directory named 'playoffs' that allows all the
 
 In addition to each conference playoff teams it will also display/return the following information:
 
-Record
-First Round Bye Teams
-Home Field Advantage Teams
-Wild Card Teams
+Record.
+First Round Bye Team.
+Home Field Advantage Teams.
+Wild Card Teams.
 
 For Reference: https://www.si.com/nfl/standings/playoff 
 
