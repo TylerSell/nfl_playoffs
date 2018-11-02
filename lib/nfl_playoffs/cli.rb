@@ -28,15 +28,15 @@ class CLI
       when "1"
         Scrape.afc_playoff_teams
       when "2"
-        nfc_playoff_teams
+        Scrape.nfc_playoff_teams
       when "3"
-        afc_bye
+        Scrape.afc_bye
       when "4"
-        afc_home_field
+        Scrape.afc_home_field
       when "5"
-        nfc_bye
+        Scrape.nfc_bye
       when "6"
-        nfc_home_field
+        Scrape.nfc_home_field
       when "7"
         goodbye
         exit 

@@ -83,23 +83,41 @@ class Scrape
   end
   
   def self.nfc_playoff_teams
-    
+    self.scrape_nfc.each_with_index do |team, index|
+      puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+    end
   end
   
   def self.afc_bye
-    
+    self.scrape_afc.each_with_index do |team, index|
+      if index <= 1 
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
+    end
   end
   
   def self.nfc_bye
-    
+    self.scrape_nfc.each_with_index do |team, index|
+      if index <= 1 
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
+    end
   end
   
   def self.afc_home_field
-    
+    self.scrape_afc.each_with_index do |team, index|
+      if index == 0 
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
+    end
   end
   
   def self.nfc_home_field
-    
+    self.scrape_nfc.each_with_index do |team, index|
+      if index == 0 
+        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+      end
+    end
   end
   
 end
