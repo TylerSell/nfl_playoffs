@@ -1,10 +1,10 @@
 module Display
-  attr_accessor :name, :wins, :losses, :ties 
+  attr_accessor :name, :wins, :losses, :ties, :city, :combined
 
   def playoff_teams
     all.each_with_index do |team, index|
       if index >= 0 && index <= 5  
-        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+        puts "#{index + 1}. #{team.combined} #{team.wins}-#{team.losses}-#{team.ties}"
       end
     end
   end
@@ -12,7 +12,7 @@ module Display
   def bye_teams
     self.all.each_with_index do |team, index|
       if index <= 1 
-        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+        puts "#{index + 1}. #{team.combined} #{team.wins}-#{team.losses}-#{team.ties}"
       end
     end
   end
@@ -20,7 +20,7 @@ module Display
   def home_field
     self.all.each_with_index do |team, index|
       if index == 0 
-        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+        puts "#{index + 1}. #{team.combined} #{team.wins}-#{team.losses}-#{team.ties}"
       end
     end
   end
@@ -28,7 +28,7 @@ module Display
   def wild_card
     self.all.each_with_index do |team, index|
       if index >= 4 && index <= 5
-        puts "#{index + 1}. #{team.name} #{team.wins}-#{team.losses}-#{team.ties}"
+        puts "#{index + 1}. #{team.combined} #{team.wins}-#{team.losses}-#{team.ties}"
       end
     end
   end
