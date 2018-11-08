@@ -7,14 +7,19 @@ class AFC
   
   def self.scrape_afc
     doc = Nokogiri::HTML(open(https://www.si.com/nfl/standings/playoff))
+    teams_table = doc.at_css("table:nth-child(2)")
+    rows = teams_table.at_css("tr")
+    rows = rows.at_css(".table-heading").remove
     
-    team = self.new 
-    team.city = 
-    team.name = 
-    team.combined = 
-    team.wins = 
-    team.losses = 
-    team.ties = 
+    team = self.new
+    
+    rows.each do |row|
+      team.city = row.at_css(".team-city a").text 
+      team.name = row.at_css(".team-name a").text 
+      team.combined = "#{team.city} #{team.name}"
+      team.wins = row.at_css(".numeric-score wins").text 
+      team.losses = row.at_css(".numeric-score losses").text
+      team.ties = row.at_css(".numeric-score draws").text
     
     @@all << team 
   end
