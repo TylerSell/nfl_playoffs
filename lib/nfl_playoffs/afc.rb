@@ -10,18 +10,17 @@ class AFC
     teams_table = doc.at_css("table:nth-child(2)")
     rows = teams_table.at_css("tr")
     
-    team = self.new
-    
-    rows.each do |row|
-      team.city = row.css(".team-city a").text 
-      team.name = row.css(".team-name a").text 
+    teams = rows.each do |row|
+      team = self.new
+      team.city = row.css("td.team-column div.collapse-narrow--inline-block div.team-city a").text 
+      team.name = row.css("td.team-column").css("div.collapse-narrow--inline-block").css("div.team-name a").text 
       team.combined = "#{team.city} #{team.name}"
-      team.wins = row.css(".numeric-score wins").text 
-      team.losses = row.css(".numeric-score losses").text
-      team.ties = row.css(".numeric-score draws").text
+      team.wins = row.css("td.numeric-score wins").text.strip
+      team.losses = row.css("td.numeric-score losses").text.strip
+      team.ties = row.css("td.numeric-score draws").text.strip
     end
     
-    @@all << team 
+    @@all << teams
   end
   
   def self.all 
