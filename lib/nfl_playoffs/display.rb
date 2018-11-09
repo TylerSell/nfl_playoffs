@@ -1,6 +1,14 @@
 module Display
   attr_accessor :name, :wins, :losses, :ties, :city, :combined
 
+  def initialize(combined, wins, losses, ties)
+    @combined = combined
+    @wins = wins
+    @losses = losses
+    @ties = ties
+    @@all << self 
+  end
+  
   def playoff_teams
     all.each_with_index do |team, index|
       if index >= 0 && index <= 5  
