@@ -30,7 +30,6 @@ class AFC
   
   def self.all 
     self.scrape_afc
-    @@all.shift
     @@all 
   end
   
