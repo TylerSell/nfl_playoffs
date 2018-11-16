@@ -29,6 +29,9 @@ class CLI
     case input 
       when "1"
         AFC.playoff_teams
+        puts ""
+        puts "Would you like more information? Y/N"
+        
         menu
       when "2"
         NFC.playoff_teams
@@ -60,7 +63,7 @@ class CLI
         menu
     end
   end
-  
+ 
   def goodbye
     puts "Goodbye. Check back next week for an update."
   end

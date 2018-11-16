@@ -2,7 +2,7 @@ module Display
   attr_accessor :name, :wins, :losses, :ties, :city, :combined
 
   def playoff_teams
-    all.each_with_index do |team, index|
+    self.all.each_with_index do |team, index|
       if index >= 1 && index <= 6  
         puts "#{index}. #{team.combined} #{team.wins}-#{team.losses}-#{team.ties}"
       end
@@ -32,5 +32,6 @@ module Display
       end
     end
   end
+
   
 end
