@@ -14,15 +14,9 @@ class CLI
     puts "Choose one of the following numbers:"
     puts ""
     puts <<~HEREDOC
-      1. AFC Playoff Teams 
-      2. NFC Playoff Teams 
-      3. AFC First Round Bye 
-      4. AFC Home Field Advantage
-      5. NFC First Round Bye
-      6. NFC Home Field Advantage
-      7. AFC Wild Card 
-      8. NFC Wild Card 
-      9. Exit 
+      1. AFC Standings 
+      2. NFC Standings
+      3. Exit 
     HEREDOC
     
     input = gets.strip
@@ -31,7 +25,14 @@ class CLI
         AFC.playoff_teams
         puts ""
         puts "Would you like more information? Y/N"
-        
+        input = gets.strip.downcase
+        if input == "y"
+          
+        elsif input == "n"
+          
+        else 
+          puts "I don't understand."
+        end
         menu
       when "2"
         NFC.playoff_teams

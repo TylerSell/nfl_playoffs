@@ -1,6 +1,14 @@
 module Display
   attr_accessor :name, :wins, :losses, :ties, :city, :combined
 
+  def standings
+    self.all.each_with_index do |team, index|
+      if index >= 1 && index <= 16
+        puts "#{index}. #{team.combined}"
+      end
+    end
+  end
+  
   def playoff_teams
     self.all.each_with_index do |team, index|
       if index >= 1 && index <= 6  
