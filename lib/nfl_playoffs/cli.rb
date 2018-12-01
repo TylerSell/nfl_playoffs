@@ -73,7 +73,7 @@ class CLI
         end
         menu
       when "2"
-        puts ""
+         puts ""
         puts "NFC Standings"
         puts ""
         NFC.standings
@@ -82,6 +82,7 @@ class CLI
         puts ""
         input = gets.strip.downcase
         if input == "y"
+          puts ""
           puts <<~HEREDOC
             1. Playoff Teams  
             2. Home Field Advantage
@@ -89,21 +90,31 @@ class CLI
             4. Wild Card Teams 
             5. Main Menu 
           HEREDOC
+          puts ""
           input = gets.strip
           case input 
             when "1"
+              puts ""
               NFC.playoff_teams
+              puts ""
               menu 
             when "2"
+              puts ""
               NFC.home_field
+              puts ""
               menu 
             when "3"
+              puts ""
               NFC.bye_teams
+              puts ""
               menu 
             when "4"
+              puts ""
               NFC.wild_card
+              puts ""
               menu 
             when "5"
+              puts ""
               menu
           end
         elsif input == "n"
@@ -123,6 +134,7 @@ class CLI
   end
  
   def goodbye
+    puts ""
     puts "Goodbye. Check back next week for an update."
   end
 end
