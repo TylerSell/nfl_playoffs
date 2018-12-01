@@ -22,14 +22,37 @@ class CLI
     input = gets.strip
     case input 
       when "1"
-        AFC.playoff_teams
+        AFC.standings
         puts ""
         puts "Would you like more information? Y/N"
         input = gets.strip.downcase
         if input == "y"
-          
+          puts <<~HEREDOC
+            1. Playoff Teams  
+            2. Home Field Advantage
+            3. First Round Bye Teams
+            4. Wild Card Teams 
+            5. Main Menu 
+          HEREDOC
+          input = gets.strip
+          case input 
+            when "1"
+              AFC.playoff_teams
+              menu 
+            when "2"
+              AFC.home_field
+              menu 
+            when "3"
+              AFC.bye_teams
+              menu 
+            when "4"
+              AFC.wild_card
+              menu 
+            when "5"
+              menu
+          end
         elsif input == "n"
-          
+          menu 
         else 
           puts "I don't understand."
         end
