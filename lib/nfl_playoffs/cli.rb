@@ -22,11 +22,16 @@ class CLI
     input = gets.strip
     case input 
       when "1"
+        puts ""
+        puts "AFC Standings"
+        puts ""
         AFC.standings
         puts ""
         puts "Would you like more information? Y/N"
+        puts ""
         input = gets.strip.downcase
         if input == "y"
+          puts ""
           puts <<~HEREDOC
             1. Playoff Teams  
             2. Home Field Advantage
@@ -34,21 +39,31 @@ class CLI
             4. Wild Card Teams 
             5. Main Menu 
           HEREDOC
+          puts ""
           input = gets.strip
           case input 
             when "1"
+              puts ""
               AFC.playoff_teams
+              puts ""
               menu 
             when "2"
+              puts ""
               AFC.home_field
+              puts ""
               menu 
             when "3"
+              puts ""
               AFC.bye_teams
+              puts ""
               menu 
             when "4"
+              puts ""
               AFC.wild_card
+              puts ""
               menu 
             when "5"
+              puts ""
               menu
           end
         elsif input == "n"
@@ -58,9 +73,13 @@ class CLI
         end
         menu
       when "2"
-        AFC.standings
+        puts ""
+        puts "NFC Standings"
+        puts ""
+        NFC.standings
         puts ""
         puts "Would you like more information? Y/N"
+        puts ""
         input = gets.strip.downcase
         if input == "y"
           puts <<~HEREDOC
